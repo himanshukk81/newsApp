@@ -1,0 +1,52 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <!-- <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list> -->
+
+    <ion-list>
+      <ion-item (click)="openPage('HomePage')" menuClose>
+          <ion-icon name="home" item-left large></ion-icon>
+          <h2>Home</h2>
+      </ion-item>  
+    </ion-list>
+
+    <ion-list>
+        <ion-item-divider color="danger">Categories</ion-item-divider>
+        <ion-card *ngFor="let category of categories">
+            <ion-item color="light" text-wrap (click)="openCategoryPage('NewsByCategory')" menuClose>
+                <ion-icon name="md-clipboard" item-left large></ion-icon>
+                <h2> {{ category.name }} </h2>
+                <!-- <p> {{ category.description }}</p> -->
+            </ion-item>
+        </ion-card>  
+
+        <ion-item-divider color="danger">Account</ion-item-divider>
+
+        <ion-item (click)="openPage('signup')" menuClose>
+          <ion-icon name="md-clipboard" item-left large></ion-icon>
+          <h2>LogIn</h2>
+        </ion-item>
+
+        <ion-item-divider color="danger">News</ion-item-divider>
+
+        <ion-item (click)="openPage('News')" menuClose>
+          <ion-icon name="md-clipboard" item-left large></ion-icon>
+          <h2>Upload News</h2>
+        </ion-item>
+  
+    </ion-list>
+
+  </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

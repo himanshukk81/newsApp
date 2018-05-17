@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+    
+    <!-- <button ion-button  (click)="shareFeedBackEmail()">Share</button> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content overflow-scroll="true">
+    <!-- <video controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer">
+     <source src="./assets/videos/Part_1.mp4" type="video/mp4" />
+    </video> -->
+<!-- 
+    <ion-list>
+      <ion-item >
+        
+      </ion-item>  
+
+      
+    </ion-list>   -->
+
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+              <button ion-button  (click)="fbLogin()"><ion-icon name="logo-facebook"></ion-icon> <span style="color:white"> Facebook</span></button>
+          </ion-col>
+          <ion-col>
+            <button ion-button color="danger" (click)="googleLogin()"><ion-icon name="logo-googleplus"></ion-icon> <span style="color:white">   Google</span></button> 
+          </ion-col>
+          <ion-col>
+            <button ion-button color="secondary" (click)="presentActionSheet()">Browse Video</button>
+          </ion-col>  
+          </ion-row>
+      </ion-grid>
+    <!-- <h2>My Name is himanshu</h2> -->
+</ion-content>
